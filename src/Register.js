@@ -14,7 +14,7 @@ function Register() {
     e.preventDefault();
     console.log(userDetails);
     axios
-      .post("http://localhost:8012/api/register.php", {
+      .post("http://localhost:8080/api/register", {
         userDetails,
       })
       .then((resp) => {

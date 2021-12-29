@@ -17,13 +17,14 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     axios
-      .post("http://localhost:8012/api/login.php", {
+      .post("http://localhost:8080/api/login", {
         email: user.email,
         password: user.password,
       })
       .then((resp) => {
-        console.log(resp.data);
+        console.log(resp);
 
         if (resp.data.id) {
           setCookies("company", resp.data.company, {
@@ -33,6 +34,8 @@ function Login() {
           setCookies("id", resp.data.id);
           console.log(resp.data);
           history.push("/");
+        } else {
+          console.log("error");
         }
       });
   };

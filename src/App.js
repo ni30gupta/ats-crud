@@ -10,7 +10,9 @@ import Header from "./Header";
 import Home from "./Home";
 import Login from "./Login";
 import Logout from "./Logout";
+import Order from "./Order";
 import Register from "./Register";
+import EditOrder from "./EditOrder";
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
           <Route path="/login" exact component={Login} />
           <Route path="/register" exact component={Register} />
           <Route path="/logout" exact component={Logout} />
+          <Route path="/order" exact component={Order} />
+          <Route path="/edit_order/:id" exact component={EditOrder} />
         </Switch>
       </div>
     </Router>
